@@ -59,6 +59,7 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
+    <Compile Include="DAO\ContatoDAO.cs" />
     <Compile Include="DAO\DAOUtils.cs" />
     <Compile Include="frm_Agenda.cs">
       <SubType>Form</SubType>

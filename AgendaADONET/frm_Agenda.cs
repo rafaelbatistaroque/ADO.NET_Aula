@@ -1,4 +1,5 @@
-﻿using System;
+﻿using AgendaADONET.DAO;
+using System;
 using System.Collections.Generic;
 using System.ComponentModel;
 using System.Data;
@@ -15,6 +16,26 @@ namespace AgendaADONET
         public frm_Agenda()
         {
             InitializeComponent();
+        }
+
+        private void Frm_Agenda_Load(object sender, EventArgs e)
+        {
+            CarregarDGV();
+        }
+        private void Btn_Excluir_Click(object sender, EventArgs e)
+        {
+            int id = (int)dgv_Agenda.CurrentRow.Cells[0].Value;
+            ContatoCRUD contatoExcluir = new ContatoCRUD();
+            contatoExcluir.Excluir(id);
+
+            CarregarDGV();
+        }
+        private void CarregarDGV()
+        {
+            ContatoCRUD contatoReader = new ContatoCRUD();
+            dgv_Agenda.DataSource = contatoReader.GetContatos();
+
+            dgv_Agenda.Refresh();
         }
     }
 }

@@ -11,6 +11,7 @@ namespace AgendaADONET.DAO
 {
     public class ContatoCRUD
     {
+        //Carregar contato no form
         public DataTable GetContatos()
         {
             DbConnection conexao = DAOUtils.GetConexao();
@@ -24,6 +25,7 @@ namespace AgendaADONET.DAO
 
             return dataTable;
         }
+        //Excluir Contato
         public void Excluir(int id)
         {
             DbConnection conexao = DAOUtils.GetConexao();

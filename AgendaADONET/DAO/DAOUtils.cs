@@ -12,7 +12,7 @@ namespace AgendaADONET.DAO
     {
         public static DbConnection GetConexao()
         {
-            string strConexao = @"Server=localhost;Database=db_dev;Uid=root;Pwd=;";
+            string strConexao = @"Server=localhost;Database=db_dev;Uid=root;Pwd=9gregokirios;";
             DbConnection conexao = new MySqlConnection(strConexao);
             conexao.Open();
             return conexao;

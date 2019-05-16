@@ -17,7 +17,7 @@ namespace AgendaADONET.DAO
             DbConnection conexao = DAOUtils.GetConexao();
             DbCommand comando = DAOUtils.GetComando(conexao);
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "SELECT * FROM tbl_aluno";
+            comando.CommandText = "SELECT * FROM tbl_cadastro";
             DbDataReader reader = DAOUtils.GetDataReader(comando);
 
             DataTable dataTable = new DataTable();
@@ -31,8 +31,8 @@ namespace AgendaADONET.DAO
             DbConnection conexao = DAOUtils.GetConexao();
             DbCommand comando = DAOUtils.GetComando(conexao);
             comando.CommandType = CommandType.Text;
-            comando.CommandText = "DELETE FROM tbl_aluno WHERE id_aluno = @id";
-            comando.Parameters.Add(new MySqlParameter("@id", id));
+            comando.CommandText = "DELETE FROM tbl_cadastro"; //WHERE id_aluno = @id";
+            //comando.Parameters.Add(new MySqlParameter("@id", id));
 
             comando.ExecuteNonQuery();
         }
